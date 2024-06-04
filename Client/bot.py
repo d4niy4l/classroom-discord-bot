@@ -1,11 +1,16 @@
 import requests
 import discord
 import pyshorteners
+import os
+from dotenv import load_dotenv
 from discord.ext import commands
+
 
 SERVER_URL= "http://localhost:500"
 
-BOT_TOKEN = 'MTIwMDQ5NTA0Nzc5NjMzODcyOA.GZmtXn.whvavG7tDsCIrOP5hDKdGiUmjvcw7g0TqJ46TM'
+load_dotenv()
+
+BOT_TOKEN = os.getenv('BOT_TOKEN') 
 
 bot = commands.Bot(command_prefix='/',intents=discord.Intents.all())
 
